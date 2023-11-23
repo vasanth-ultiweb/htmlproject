@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+    <script>
+        function addToCart() {
+            var cartDropdown = document.getElementById('products');
+            var selectedProduct = cartDropdown.options[cartDropdown.selectedIndex].text;
+
+            var cartBody = document.getElementById('cartBody');
+
+            var newRow = cartBody.insertRow();
+            var cell = newRow.insertCell(0);
+
+            cell.innerHTML = selectedProduct;
+        }
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1>Shopping Cart</h1>
+
+            <label for="products">Select a product:</label>
+            <select id="products">
+                <option value="vegetable">vegetable</option>
+                <option value="fruits">fruits</option>
+                <option value="fertilizers">fertilizers</option>
+            </select>
+        
+            <button onclick="addToCart()">Add to Cart</button>
+        
+            <table id="cart">
+                <thead>
+                    <tr>
+                        <th>Selected products</th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody">
+                </tbody>
+            </table>
+        
+        </div>
+    </div>
+ 
+   
+
+
+
+
+
+
+
+
+  
+</body>
+</html>
